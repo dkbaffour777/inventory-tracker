@@ -1,25 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inventory Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 </head>
 
 <body>
-    <header>
-        <h1>Inventory Tracker</h1>
-    </header>
-    <div>Keep up with an item you wish to purchase</div>
+    <section class="hero is-success">
+        <div class="hero-body">
+          <p class="title has-text-centered">
+            Inventory Tracker
+          </p>
+          <p class="subtitle has-text-centered">
+            Keep up with an item you wish to purchase
+          </p>
+        </div>
+      </section>
 
     <!--item dropdown menu-->
-    <div>Drop Down holder</div>
+    <section class="section is-medium">
+        <div class="dropdown">
+            <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Tracked Product!</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                        Dropdown item
+                    </a>
+                    <a class="dropdown-item">
+                        dropdown item
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        dropdown item
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        dropdown item
+                    </a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Section for the item desctription-->
+    <section class="section is-large">
+        <h1 class="title">Large section</h1>
+        <h2 class="subtitle">
+         When clicked in dropdown item can show here.
+        </h2>
+      </section>
 
-    <footer>
-        <h2>Made by Daniel,Chris, and Abror</h2>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p> &#x1F60E;</p>
+                <strong>Created by Daniel, Chris, and Abror </strong>
+            </p>
+        </div>
     </footer>
     <script src="./assets/javascript/script.js"></script>
 </body>
