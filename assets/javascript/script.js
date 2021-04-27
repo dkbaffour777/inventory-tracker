@@ -1,5 +1,6 @@
-var API_KEY = "b133c6b3f1msh0e46e9a17395421p1ea5bajsnb129cea2451d" // insert your API key in the double quotes
+var API_KEY = "" // insert your API key in the double quotes
 
+var inventoryOffers = null
 
 var products = [
     {
@@ -32,8 +33,8 @@ var renderInventoryList = (function () {
     dropdownContEl.innerHTML = dropdownContInHTML
 })()
 
-// Fetch the inventory data
-function fetchInventory(index) {
+// Fetch the inventory details
+function fetchInventoryDetails(index) {
     fetch("https://ebay-com.p.rapidapi.com/products/" + products[index].upc, {
         "method": "GET",
         "headers": {
@@ -60,6 +61,33 @@ function fetchInventory(index) {
     });
 }
 
+// Fetch the inventory offers
+function fetchInventoryOffers(index) {
+    fetch("https://ebay-com.p.rapidapi.com/products/" + products[index].upc + "/offers", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": API_KEY,
+            "x-rapidapi-host": "ebay-com.p.rapidapi.com"
+        }
+    })
+    .then(function (response) {
+        return response;
+    })
+    .then(function (response) {
+        if(response.ok) {
+            response.json()
+            .then(function(offers){
+                console.log(offers)
+                inventoryOffers = offers
+            })
+        } else {
+            handleError(response.statusText)
+        }
+    })
+    .catch(function (error) {
+        console.log(error.message)
+    });
+}
 
 // Render the item's info on the DOM
 function renderItem(item) {
@@ -82,11 +110,19 @@ function renderItem(item) {
                 ` + item.Title + `
             </h1>
             <p class="subtitle">
-                Merchant: ` + item.Offers[0].Merchant + `
+                Merchant: ` + item.Offers[0].Merchant + `(Quality - New)
             </p>
             <div class="columns is-flex  is-justify-content-center">
                 <div class="column" id="price">Base Price: ` + item.FormattedBestPrice + `</div>
                 <div class="column">In stock: ` + inStockStatus + `</div>
+            </div>
+            <div class="is-flex  is-justify-content-center">
+                <span class="icon is-large is-size-3">
+                    <i id="previous-offer" class="fas fa-arrow-left" aria-hidden="true"></i>
+                </span>
+                <span class="icon is-large is-size-3">
+                    <i id="next-offer" class="fas fa-arrow-right" aria-hidden="true"></i>
+                </span>
             </div>
         </div>
     </div>
@@ -153,6 +189,6 @@ function handleError(err_msg) {
 document.querySelector(".dropdown-content").addEventListener("click", function (event) {
     if (event.target.matches(".dropdown-item p")) {
         document.querySelector("#item-cont").innerHTML = ""
-        fetchInventory(event.target.dataset.inventoryItem)
+        fetchInventoryDetails(event.target.dataset.inventoryItem)
     }
 })
