@@ -31,6 +31,7 @@
 }
 
 .other-img {
+    border: 1px solid #EEE;
     width: 150px;
     height: 100px;
 }
@@ -43,6 +44,15 @@
     width: 100%;
     margin: auto;
     text-align: center;
+    border: 1px solid #EEE;
+}
+
+.icon-nav {
+    padding: 60px;
+}
+
+.icon-nav:hover {
+    background-color: #fafafa;
 }
 
 #dropdown {
