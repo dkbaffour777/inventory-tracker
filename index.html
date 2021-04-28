@@ -2,55 +2,75 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inventory Tracker</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventory Tracker</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body>
-    <section class="hero is-success">
-        <div class="hero-body">
-          <p class="title has-text-centered">
-            Inventory Tracker
-          </p>
-          <p class="subtitle has-text-centered">
-            Keep up with an item you wish to purchase
-          </p>
-        </div>
-      </section>
-
+  <section class="hero is-success">
+    <div class="hero-body">
+      <p class="title has-text-centered">
+        Inventory Tracker
+      </p>
+      <p class="subtitle has-text-centered">
+        Keep up with an item you wish to purchase
+      </p>
+    </div>
+  </section>
+  
+  <section class="section is-flex is-flex-direction-column">
     <!--item dropdown menu-->
-    <section class="section is-medium">
-        <div class="dropdown is-hoverable">
-            <div class="dropdown-trigger">
-              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-                <span>Hover me</span>
-                <span class="icon is-small">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
-            </div>
-            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-              <div class="dropdown-content">
-                <div class="dropdown-item">
-                  <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-    </section>
-    
-
-
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <p> &#x1F60E;</p>
-                <strong>Created by Daniel, Chris, and Abror </strong>
-            </p>
+    <div class="dropdown is-hoverable">
+      <div class="dropdown-trigger">
+        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+          <span>Inventory</span>
+          <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+      <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+        <div class="dropdown-content"></div>
+      </div>
+    </div>
+    <!--Inventory Info-->
+    <div class="container mt-5 is-flex is-flex-direction-column is-align-items-center is-justify-content-center" id="item-cont">
+      <div class="empty is-flex is-flex-direction-column is-align-items-center is-justify-content-space-evenly">
+        <h2 class="is-size-1-desktop is-size-4-mobile">Select an inventory to track</h2>
+        <span class="icon is-large is-size-1">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+  </section>
+  <!--Modal-->
+  <div class="modal" id="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <article class="message is-danger">
+        <div class="message-header">
+          <p>Error</p>
+          <button id="modal-close" class="delete" aria-label="delete"></button>
         </div>
-    </footer>
-    <script src="./assets/javascript/script.js"></script>
+        <div class="message-body">
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p> &#x1F60E;</p>
+      <strong>Created by Daniel, Chris, and Abror </strong>
+      </p>
+    </div>
+  </footer>
+
+  <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>
