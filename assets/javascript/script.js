@@ -1,4 +1,4 @@
-var API_KEY = "" // insert your API key in the double quotes
+var API_KEY = "b133c6b3f1msh0e46e9a17395421p1ea5bajsnb129cea2451d" // insert your API key in the double quotes
 
 var inventoryOffers = null
 
@@ -110,7 +110,22 @@ function renderItem(item) {
         <div class="column mt-6">
             <div class="columns is-flex is-flex-wrap-no-wrap" id="item-img-cont"></div>
         </div>
-        <div class="column item-info">
+        <div class="column item-info p-6">
+            <div class="columns is-flex  is-justify-content-space-between">
+                <div class="column">
+                    <span class="icon is-large is-size-3 icon-nav">
+                        <i id="previous-offer" class="fas fa-arrow-left" aria-hidden="true" style="cursor: pointer"></i>
+                    </span>
+                </div>
+                <div class="column">
+                <p class="subtitle mt-2"> Offers </p>
+                </div>
+                <div class="column">
+                    <span class="icon is-large is-size-3 icon-nav">
+                        <i id="next-offer" class="fas fa-arrow-right" aria-hidden="true" style="cursor: pointer"></i>
+                    </span>
+                </div>
+            </div>
             <h1 class="title mt-5 is-size-5-mobile">
                 ` + item.Title + `
             </h1>
@@ -120,15 +135,6 @@ function renderItem(item) {
             <div class="columns is-flex  is-justify-content-center">
                 <div class="column" id="price">Base Price: ` + item.FormattedBestPrice + `</div>
                 <div class="column" id="instock">In stock: ` + inStockStatus + `</div>
-            </div>
-            <p class="subtitle mt-2"> Offers </p>
-            <div class="is-flex  is-justify-content-space-evenly">
-                <span class="icon is-large is-size-3">
-                    <i id="previous-offer" class="fas fa-arrow-left" aria-hidden="true" style="cursor: pointer"></i>
-                </span>
-                <span class="icon is-large is-size-3">
-                    <i id="next-offer" class="fas fa-arrow-right" aria-hidden="true" style="cursor: pointer"></i>
-                </span>
             </div>
         </div>
     </div>
