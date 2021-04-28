@@ -15,6 +15,35 @@ var products = [
         name: "Nvidia GEFORCE GTX 1080 Ti",
         upc: "812674021317"
     },
+    {
+        name: " EVGA 10G-P5-3897-KR GeForce RTX 3080 FTW3 ULTRA GAMING, 10GB GDDR6X, iCX3 Technology, ARGB LED, Metal Backplate",
+        upc: "843368067243"
+    },
+    {
+        name: "CORSAIR Carbide 200R Compact ATX Case, CC-9011023-WW",
+        upc: "843591033251"
+    },
+    {
+        name: " PICTEK Wireless Gaming Mouse, Silent Click, Side Buttons, 2.4G Cordless Computer PC Gaming Mouse Laptop USB Mice,",
+        upc: "635648731346"
+    },
+    {
+        name:"MSI Gaming AMD Ryzen X370 DDR4 VR Ready HDMI USB 3 SLI CFX ATX Motherboard",
+        upc: "824142145272"
+    },
+    {
+        name: "AMD Processor 3.2GHz Dual Core Socket FM2 A4-Series ",
+        upc: "730143304610"
+    },
+    {
+        name: "Noctua NF-A14 PWM, 4-Pin Premium Quiet Cooling Fan (140mm, Brown)",
+        upc: "897337035856"
+    },
+    {
+        name: "Corsair TR3X6G1600C8D Dominator 6 GB 3 x 2 GB PC3-12800 1600MHz 240-Pin DDR3 Core i7 Memory Kit",
+        upc:"843591003476"
+    },
+    
     // Follow the object format and add more items
     // The dropdown will be updated by javascript with the new list of items
 ]
