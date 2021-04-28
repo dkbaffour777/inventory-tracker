@@ -50,7 +50,12 @@ function fetchInventoryDetails(index) {
         if(response.ok) {
             response.json()
             .then(function(item){
+                console.log(item)
                 renderItem(item)
+                // The API call allows one call per second
+                setTimeout(function(){
+                    fetchInventoryOffers(index)
+                }, 1000)
             })
         } else {
             handleError(response.statusText)
@@ -78,7 +83,7 @@ function fetchInventoryOffers(index) {
             response.json()
             .then(function(offers){
                 console.log(offers)
-                inventoryOffers = offers
+                renderOffers(offers)
             })
         } else {
             handleError(response.statusText)
@@ -97,7 +102,7 @@ function renderItem(item) {
     <div class="columns is-flex is-flex-direction-column is-flex-wrap-wrap is-align-items-center">
         <div class="column">
             <figure class="image main-img is-flex is-align-item-center">
-                <a class="p-0" href=` + item.Offers[0].Link + ` target="_blank">
+                <a id="main-item-img-link" class="is-flex is-align-items-center p-0" href=` + item.Offers[0].Link + ` target="_blank">
                     <img id="main-item-img" src=""/>
                 </a>
             </figure>
@@ -110,18 +115,19 @@ function renderItem(item) {
                 ` + item.Title + `
             </h1>
             <p class="subtitle">
-                Merchant: ` + item.Offers[0].Merchant + `(Quality - New)
+                Merchant: <span id="merchant">` + item.Offers[0].Merchant + `</span>(Quality - <span id="quality"> ` + item.Offers[0].Quality + `</span>)
             </p>
             <div class="columns is-flex  is-justify-content-center">
                 <div class="column" id="price">Base Price: ` + item.FormattedBestPrice + `</div>
-                <div class="column">In stock: ` + inStockStatus + `</div>
+                <div class="column" id="instock">In stock: ` + inStockStatus + `</div>
             </div>
-            <div class="is-flex  is-justify-content-center">
+            <p class="subtitle mt-2"> Offers </p>
+            <div class="is-flex  is-justify-content-space-evenly">
                 <span class="icon is-large is-size-3">
-                    <i id="previous-offer" class="fas fa-arrow-left" aria-hidden="true"></i>
+                    <i id="previous-offer" class="fas fa-arrow-left" aria-hidden="true" style="cursor: pointer"></i>
                 </span>
                 <span class="icon is-large is-size-3">
-                    <i id="next-offer" class="fas fa-arrow-right" aria-hidden="true"></i>
+                    <i id="next-offer" class="fas fa-arrow-right" aria-hidden="true" style="cursor: pointer"></i>
                 </span>
             </div>
         </div>
@@ -137,6 +143,57 @@ function renderItem(item) {
             var imageSRC = event.target.getAttribute("src")
             document.querySelector("#main-item-img").setAttribute("src", imageSRC)
         }
+    })
+}
+
+// Render the offers
+function renderOffers(offers) {
+    // Generate an id for the offers
+    // This will be used for navigating back and forth the offers
+    var offerID = (function(){
+        var id = 0
+        return {
+            previous: function(){
+                if(id > 0) {
+                    id--
+                }
+                return id
+            },
+            next: function(){
+                if(id < offers.length-1) {
+                    id++
+                }
+                return id
+            }
+        }
+    })()
+
+    // Get the corresponding DOM elements
+    var productLink = document.querySelector("#main-item-img-link")
+    var merchant = document.querySelector("#merchant")
+    var quality = document.querySelector("#quality")
+    var price = document.querySelector("#price")
+    var instock = document.querySelector("#instock")
+
+    // Update the corresponding info of the offer
+    function renderInfo(id) {
+        productLink.setAttribute("href", offers[id].Link)
+        merchant.textContent = offers[id].Merchant
+        quality.textContent = offers[id].Quality
+        price.textContent = "Base Price: " + offers[id].FormattedPrice
+    
+        var inStockStatus = offers[id].InStockStatus === "1" ? "Yes" : "No"
+        instock.textContent = "In stock: " + inStockStatus
+    }
+
+    // Navigate to previous offer
+    document.querySelector("#previous-offer").addEventListener("click", function(){
+        renderInfo(offerID.previous())
+    })
+    
+    // Navigate to next offer
+    document.querySelector("#next-offer").addEventListener("click", function(){
+        renderInfo(offerID.next())
     })
 }
 
