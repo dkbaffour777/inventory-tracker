@@ -8,42 +8,41 @@ var products = [
         upc: "859285005404"
     },
     {
+        name: "CORSAIR Dark Core - RGB Wireless Gaming Mouse",
+        upc: "843591077538"
+    },
+    {
         name: "Samsung 27\" Odyssey G7 Gaming Monitor",
         upc: "887276413129"
-    },
-    {
-        name: "Nvidia GEFORCE GTX 1080 Ti",
-        upc: "812674021317"
-    },
-    {
-        name: " EVGA 10G-P5-3897-KR GeForce RTX 3080 FTW3 ULTRA GAMING, 10GB GDDR6X, iCX3 Technology, ARGB LED, Metal Backplate",
-        upc: "843368067243"
     },
     {
         name: "CORSAIR Carbide 200R Compact ATX Case, CC-9011023-WW",
         upc: "843591033251"
     },
     {
-        name: " PICTEK Wireless Gaming Mouse, Silent Click, Side Buttons, 2.4G Cordless Computer PC Gaming Mouse Laptop USB Mice,",
-        upc: "635648731346"
+        name: "Nvidia GEFORCE GTX 1080 Ti",
+        upc: "812674021317"
     },
     {
-        name:"MSI Gaming AMD Ryzen X370 DDR4 VR Ready HDMI USB 3 SLI CFX ATX Motherboard",
-        upc: "824142145272"
+        name: "EVGA 10G-P5-3897-KR GeForce RTX 3080 FTW3 ULTRA GAMING, 10GB GDDR6X",
+        upc: "843368067243"
     },
     {
-        name: "AMD Processor 3.2GHz Dual Core Socket FM2 A4-Series ",
-        upc: "730143304610"
+        name: "Corsair Dominator Platinum RGB 32GB (2x16GB) DDR4 3200 C16 1.35V Desktop Memory",
+        upc: "840006607342"
     },
     {
-        name: "Noctua NF-A14 PWM, 4-Pin Premium Quiet Cooling Fan (140mm, Brown)",
-        upc: "897337035856"
+        name: "AMD Ryzen 9 5900X 12-core, 24-Thread Unlocked Desktop Processor",
+        upc: "730143312738"
     },
     {
-        name: "Corsair TR3X6G1600C8D Dominator 6 GB 3 x 2 GB PC3-12800 1600MHz 240-Pin DDR3 Core i7 Memory Kit",
-        upc:"843591003476"
+        name: "CORSAIR HYDRO Series H115i PRO RGB AIO Liquid CPU Cooler,280mm",
+        upc: "843591026505"
     },
-    
+    {
+        name: "CORSAIR Void PRO RGB Wireless Gaming Headset - Dolby 7.1 Surround Sound Headphones for PC",
+        upc: "843591019408"
+    },
     // Follow the object format and add more items
     // The dropdown will be updated by javascript with the new list of items
 ]
