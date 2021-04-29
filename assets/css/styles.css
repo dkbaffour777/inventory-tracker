@@ -10,16 +10,20 @@
     background-color: #fafafa;
 }
 
+#tutorial-modal-content, #welcome-modal-content {
+    width: 46%;
+}
+
 #item-cont{
     width: 100%;
 }
 
 .empty {
-    height: 400px;
+    height: 600px;
     color: #EEE;
 }
 
-.main-img {
+.main-item-img {
     width: 100%;
     height: 250px;
 }
@@ -40,7 +44,7 @@
     cursor: pointer;
 }
 
-.item-info {
+#item-info {
     width: 100%;
     margin: auto;
     text-align: center;
@@ -53,6 +57,7 @@
 
 .icon-nav:hover {
     background-color: #fafafa;
+    cursor: pointer;
 }
 
 #dropdown {
@@ -63,6 +68,31 @@
     cursor: pointer;
 }
 
+.dropdown-item p a {
+    text-decoration: none;
+    color: #000;
+}
+
+#inStock, #offerID{
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 15%;
+}
+
+.inStock {
+    background-color: rgb(5, 206, 5);
+}
+
+.notInStock {
+    background-color: red;
+}
+
+@media screen and (max-width: 1288px) {
+    #tutorial-modal-content{
+        width: 70%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     #item-img-cont {
         width: 250px;
@@ -70,5 +100,8 @@
     .other-img {
         width: 100px;
         height: 50px;
+    }
+    #tutorial-modal-content, #welcome-modal-content, #error-modal-content{
+        width: 100%;
     }
 }
