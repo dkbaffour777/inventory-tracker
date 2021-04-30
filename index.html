@@ -47,22 +47,72 @@
       </div>
     </div>
   </section>
-  <!--Modal-->
-  <div class="modal" id="modal">
+  <!--Welcome Modal-->
+  <div class="modal" id="welcome-modal">
     <div class="modal-background"></div>
-    <div class="modal-content">
-      <article class="message is-danger">
+    <div id="welcome-modal-content" class="modal-content is-flex is-flex-direction-column is-align-items">
+      <article class="message is-info">
         <div class="message-header">
-          <p>Error</p>
-          <button id="modal-close" class="delete" aria-label="delete"></button>
+          <p>Welcome!</p>
+          <p>&#x1F60E;</p>
         </div>
         <div class="message-body">
+          <p class="has-text-centered">Have you ever used Inventory Tracker before?</p>
+          <div class="buttons pt-4 is-flex is-justify-content-space-evenly">
+            <button class="button is-success" id="tut-yes">Yes, exit out of this.</button>
+            <button class="button is-danger" id="tut-no">No, give me a quick tutorial.</button>
+          </div>
         </div>
       </article>
     </div>
   </div>
-
-  <footer class="footer">
+  <!--Tutorial Modal-->
+  <div class="modal" id="tutorial-modal">
+    <div class="modal-background"></div>
+    <div id="tutorial-modal-content" class="modal-content is-flex is-flex-direction-column is-align-items">
+      <div class="message-header is-flex is-justify-content-flex-end"  style="background-color: #48c774;">
+        <button id="tutorial-modal-close" class="delete" aria-label="delete"></button>
+      </div>
+      <div id="tutorial-tab-cont" class="tabs is-centered is-boxed" style="background-color: #48c774;">
+        <ul>
+          <li class="is-active tutorial-tab" data-image-id="1">
+            <a>
+              <span>Step 1</span>
+            </a>
+          </li>
+          <li class="tutorial-tab" data-image-id="2">
+            <a>
+              <span>Step 2</span>
+            </a>
+          </li>
+          <li class="tutorial-tab" data-image-id="3">
+            <a>
+              <span>Step 3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <figure class="image is-flex is-align-item-center">
+        <img id="tut-img" src="./assets/images/tutorial-img-1.png"/>
+      </figure>
+    </div>
+  </div>
+  <!--Error Modal-->
+  <div class="modal" id="error-modal">
+    <div class="modal-background"></div>
+    <div id="error-modal-content" class="modal-content">
+      <article class="message is-danger">
+        <div class="message-header">
+          <p>Error</p>
+          <button id="error-modal-close" class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body" id="error-message-body">
+        </div>
+      </article>
+    </div>
+  </div>
+  <!--Footer-->
+  <footer id="footer" class="footer">
     <div class="content has-text-centered">
       <p> &#x1F60E;</p>
       <strong>Created by Daniel, Chris, and Abror </strong>
