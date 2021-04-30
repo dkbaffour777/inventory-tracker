@@ -1,4 +1,4 @@
-var API_KEY = "2cda45a79cmshb35a8f726f92142p1243fajsne0748752511b" // insert your API key in the double quotes
+var API_KEY = "d25d851393msh76e9311bf88863dp140400jsn4a9a90d84fb4" // insert your API key in the double quotes
 
 var products = [
     {
