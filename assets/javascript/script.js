@@ -21,6 +21,7 @@ var products = [
         name: "AMD Ryzen 9 5900X 12-core, 24-Thread Unlocked Desktop Processor",
         upc: "730143312738"
     },
+    
     // Follow the object format and add more items
     // The dropdown will be updated by javascript with the new list of items
 ]
